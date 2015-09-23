@@ -5,14 +5,15 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:23.0.+'
+    compile 'com.android.support:support-v4:23.0.1'
     compile 'com.google.android.gms:play-services:3.2.+'
-    compile 'net.hockeyapp.android:HockeySDK:3.5.+'
-    compile 'com.googlecode.mp4parser:isoparser:1.0.+'
+    compile 'net.hockeyapp.android:HockeySDK:3.5.0'
+    compile 'com.googlecode.mp4parser:isoparser:1.0.6'
     compile 'org.apache.httpcomponents:httpmime:4.2.1'
 }
 
 android {
+
     compileSdkVersion 22
     buildToolsVersion '23.0.1'
 
@@ -44,6 +45,7 @@ android {
             debuggable true
             jniDebuggable true
             signingConfig signingConfigs.debug
+            applicationIdSuffix ".dev"
         }
 
         release {
@@ -77,9 +79,15 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 8
+        minSdkVersion 14
+        //noinspection OldTargetApi
         targetSdkVersion 22
         versionCode 627
         versionName "3.2.2"
+
+        buildConfigField "int", "APP_ID", "${property('app.id')}"
+        buildConfigField "String", "APP_HASH", "\"${property('app.hash')}\""
+        buildConfigField "String", "LOG_EMAIL", "\"${property('log.email')}\""
+        buildConfigField "String", "HOCKEYAPP_HASH", "\"${property('hockeyapp.hash')}\""
     }
 }
