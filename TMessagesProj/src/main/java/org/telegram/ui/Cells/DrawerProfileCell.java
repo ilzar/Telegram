@@ -47,6 +47,7 @@ public class DrawerProfileCell extends FrameLayout {
     public DrawerProfileCell(Context context) {
         super(context);
         setBackgroundColor(context.getResources().getColor(R.color.base_background));
+        setBackgroundResource(R.drawable.hamburger);
 
         shadowView = new ImageView(context);
         shadowView.setVisibility(INVISIBLE);
