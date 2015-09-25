@@ -110,8 +110,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.telegram.ui.IntroActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+            android:name="org.telegram.ui.webviewintro.WebViewIntroActivity" >
         </activity>
         <activity
             android:name="org.telegram.ui.PopupNotificationActivity"

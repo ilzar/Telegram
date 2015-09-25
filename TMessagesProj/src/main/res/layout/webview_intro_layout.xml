@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.telegram.ui.webviewintro.IntroWebView
+        android:id="@+id/webview_intro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </org.telegram.ui.webviewintro.IntroWebView>
+
+
+    <!--android:background="@drawable/regbtn_states" -->
+    <Button
+        android:id="@+id/start_messaging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/StartMessaging"
+        android:layout_centerHorizontal="true"
+        android:background="#000080"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16dp"
+        android:textColor="#F4EE00"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        />
+
+</RelativeLayout>

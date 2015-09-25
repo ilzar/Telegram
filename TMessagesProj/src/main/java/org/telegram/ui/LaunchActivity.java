@@ -69,6 +69,7 @@ import org.telegram.ui.ActionBar.DrawerLayoutContainer;
 import org.telegram.ui.Components.DrawerPlayerView;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.PasscodeView;
+import org.telegram.ui.webviewintro.WebViewIntroActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -127,7 +128,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("logininfo", MODE_PRIVATE);
                 Map<String, ?> state = preferences.getAll();
                 if (state.isEmpty()) {
-                    Intent intent2 = new Intent(this, IntroActivity.class);
+                    Intent intent2 = new Intent(this, WebViewIntroActivity.class);
                     startActivity(intent2);
                     super.onCreate(savedInstanceState);
                     finish();
@@ -1536,7 +1537,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 }
                 rightActionBarLayout.fragmentsStack.clear();
             }
-            Intent intent2 = new Intent(this, IntroActivity.class);
+            Intent intent2 = new Intent(this, WebViewIntroActivity.class);
             startActivity(intent2);
             onFinish();
             finish();
