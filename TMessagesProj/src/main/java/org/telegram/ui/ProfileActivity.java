@@ -255,9 +255,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     @Override
     public View createView(Context context) {
 //        actionBar.setBackgroundColor(AvatarDrawable.getProfileBackColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
-        actionBar.setBackgroundColor(R.color.base_background);
+        actionBar.setBackgroundColor(context.getResources().getColor(R.color.base_background));
 //        actionBar.setItemsBackground(AvatarDrawable.getButtonColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
-        actionBar.setItemsBackground(R.color.base_background);
+        actionBar.setItemsBackground(context.getResources().getColor(R.color.base_background));
 
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         actionBar.setExtraHeight(AndroidUtilities.dp(88), false);
@@ -478,7 +478,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         });
 
         nameTextView = new TextView(context);
-        nameTextView.setTextColor(0xffffffff);
+        nameTextView.setTextColor(context.getResources().getColor(R.color.base_font));
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
         nameTextView.setLines(1);
         nameTextView.setMaxLines(1);
@@ -497,7 +497,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         nameTextView.setLayoutParams(layoutParams);
 
         onlineTextView = new TextView(context);
-        onlineTextView.setTextColor(AvatarDrawable.getProfileTextColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
+//        onlineTextView.setTextColor(AvatarDrawable.getProfileTextColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
+        onlineTextView.setTextColor(context.getResources().getColor(R.color.base_font));
         onlineTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         onlineTextView.setLines(1);
         onlineTextView.setMaxLines(1);
@@ -518,7 +519,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         listView.setDivider(null);
         listView.setDividerHeight(0);
         listView.setVerticalScrollBarEnabled(false);
-        AndroidUtilities.setListViewEdgeEffectColor(listView, AvatarDrawable.getProfileBackColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
+//        AndroidUtilities.setListViewEdgeEffectColor(listView, AvatarDrawable.getProfileBackColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
+        AndroidUtilities.setListViewEdgeEffectColor(listView, context.getResources().getColor(R.color.base_background));
         frameLayout.addView(listView);
         layoutParams = (FrameLayout.LayoutParams) listView.getLayoutParams();
         layoutParams.width = LayoutHelper.MATCH_PARENT;

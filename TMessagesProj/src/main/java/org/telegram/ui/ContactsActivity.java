@@ -229,7 +229,7 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
         });
 
         emptyTextView = new TextView(context);
-        emptyTextView.setTextColor(0xff808080);
+        emptyTextView.setTextColor(context.getResources().getColor(R.color.base_font));
         emptyTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
         emptyTextView.setGravity(Gravity.CENTER);
         emptyTextView.setText(LocaleController.getString("NoContacts", R.string.NoContacts));

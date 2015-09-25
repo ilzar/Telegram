@@ -262,7 +262,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         }
 
         FrameLayout listViewContainer = new FrameLayout(this);
-        listViewContainer.setBackgroundColor(0xffffffff);
+        listViewContainer.setBackgroundColor(this.getResources().getColor(R.color.base_background));
         drawerLayoutContainer.setDrawerLayout(listViewContainer);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) listViewContainer.getLayoutParams();
         Point screenSize = AndroidUtilities.getRealScreenSize();

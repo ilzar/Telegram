@@ -47,8 +47,8 @@ public class UserCell extends FrameLayout {
     private int lastStatus = 0;
     private TLRPC.FileLocation lastAvatar = null;
 
-    private int statusColor = 0xffa8a8a8;
-    private int statusOnlineColor = 0xff3b84c0;
+    private int statusColor = R.color.base_font;
+    private int statusOnlineColor = R.color.base_font;
 
     public UserCell(Context context, int padding) {
         super(context);
@@ -60,7 +60,7 @@ public class UserCell extends FrameLayout {
         addView(avatarImageView, LayoutHelper.createFrame(48, 48, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP, LocaleController.isRTL ? 0 : 7 + padding, 8, LocaleController.isRTL ? 7 + padding : 0, 0));
 
         nameTextView = new SimpleTextView(context);
-        nameTextView.setTextColor(0xff212121);
+        nameTextView.setTextColor(context.getResources().getColor(R.color.base_font));
         nameTextView.setTextSize(17);
         nameTextView.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP);
         addView(nameTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 20, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP, LocaleController.isRTL ? 28 : (68 + padding), 11.5f, LocaleController.isRTL ? (68 + padding) : 28, 0));
