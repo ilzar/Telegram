@@ -331,6 +331,9 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                         FileLog.e("tmessages", e);
                     }
                     drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 10) {
+                    presentFragment(new BotStoreActivity());
+                    drawerLayoutContainer.closeDrawer(false);
                 }
             }
         });
