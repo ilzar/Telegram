@@ -150,6 +150,20 @@ public class BotStoreActivity extends BaseFragment {
             }
         });
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(final AdapterView<?> parent,
+                                    final View view,
+                                    final int position,
+                                    final long id) {
+                final Bundle bundle = new Bundle();
+                bundle.putInt("user_id", 123238669);
+                ChatActivity chat = new ChatActivity(bundle);
+                presentFragment(chat);
+            }
+        });
+
+
         return fragmentView;
     }
 }

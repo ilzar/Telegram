@@ -21,6 +21,7 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.widget.Toast;
 
+import org.telegram.Ytils.DialogSorter;
 import org.telegram.messenger.query.BotQuery;
 import org.telegram.messenger.query.StickersQuery;
 import org.telegram.tgnet.ConnectionsManager;
@@ -2143,6 +2144,8 @@ public class MessagesController implements NotificationCenter.NotificationCenter
                             }
                         }
 
+                        DialogSorter.INSTANCE.promoteBot(dialogs);
+
                         dialogsEndReached = (dialogsRes.dialogs.size() == 0 || dialogsRes.dialogs.size() != count) && !isCache;
                         NotificationCenter.getInstance().postNotificationName(NotificationCenter.dialogsNeedReload);
                         generateUpdateMessage();
@@ -2333,6 +2336,9 @@ public class MessagesController implements NotificationCenter.NotificationCenter
                                 }
                             }
                         }
+
+                        DialogSorter.INSTANCE.promoteBot(dialogs);
+
                         NotificationCenter.getInstance().postNotificationName(NotificationCenter.dialogsNeedReload);
                         NotificationsController.getInstance().processDialogsUpdateRead(dialogsToUpdate);
                     }
@@ -5303,6 +5309,8 @@ public class MessagesController implements NotificationCenter.NotificationCenter
                     }
                 }
             }
+
+            DialogSorter.INSTANCE.promoteBot(dialogs);
         }
     }
 
