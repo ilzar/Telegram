@@ -324,15 +324,15 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 } else if (position == 8) {
                     presentFragment(new SettingsActivity());
                     drawerLayoutContainer.closeDrawer(false);
-                } else if (position == 9) {
+               /* } else if (position == 9) {
                     try {
                         Intent pickIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(LocaleController.getString("TelegramFaqUrl", R.string.TelegramFaqUrl)));
                         startActivityForResult(pickIntent, 500);
                     } catch (Exception e) {
                         FileLog.e("tmessages", e);
                     }
-                    drawerLayoutContainer.closeDrawer(false);
-                } else if (position == 10) {
+                    drawerLayoutContainer.closeDrawer(false);*/
+                } else if (position == 9) {
                     presentFragment(new BotStoreActivity());
                     drawerLayoutContainer.closeDrawer(false);
                 }
