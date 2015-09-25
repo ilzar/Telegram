@@ -28,7 +28,7 @@ public class BotShopService {
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mLastRequest;
 
-    interface BotShopCallback {
+    public interface BotShopCallback {
         void onSuccess(BotItems botItems);
         void onFailure();
     }

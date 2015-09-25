@@ -6,6 +6,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -13,7 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.telegram.messenger.BotDescription;
+import org.telegram.BotShop.BotItem;
+import org.telegram.BotShop.BotItems;
+import org.telegram.BotShop.BotShopService;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -24,7 +27,8 @@ public class BotStoreActivity extends BaseFragment {
 
     private ListView listView;
     private TextView emptyTextView;
-    private ArrayAdapter<BotDescription> listViewAdapter;
+    private ArrayAdapter<BotItem> listViewAdapter;
+    private BotShopService botShopService;
 
     @Override
     public boolean onFragmentCreate() {
@@ -52,8 +56,25 @@ public class BotStoreActivity extends BaseFragment {
             }
         });
 
-        listViewAdapter = new ArrayAdapter<>(context, R.layout.list_item_bot, R.id.bot_name);
-        listViewAdapter.add(new BotDescription("Name", "http", "descr"));
+        listViewAdapter = new ArrayAdapter<BotItem>(context, R.layout.list_item_bot, R.id.bot_name) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                return super.getView(position, convertView, parent);
+            }
+        };
+
+        botShopService = new BotShopService(context);
+        botShopService.load(new BotShopService.BotShopCallback() {
+            @Override
+            public void onSuccess(BotItems botItems) {
+                listViewAdapter.addAll(botItems.mBotItemList);
+                listViewAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure() {
+            }
+        });
 
         fragmentView = new FrameLayout(context);
 

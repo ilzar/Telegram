@@ -13,4 +13,9 @@ public class BotItem {
         this.description = description;
         this.imageUrl = imageUrl;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
