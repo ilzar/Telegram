@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import org.telegram.BotShop.BotItem;
 import org.telegram.BotShop.BotItems;
@@ -59,7 +62,10 @@ public class BotStoreActivity extends BaseFragment {
         listViewAdapter = new ArrayAdapter<BotItem>(context, R.layout.list_item_bot, R.id.bot_name) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                return super.getView(position, convertView, parent);
+                View view = super.getView(position, convertView, parent);
+                ImageView botPic = (ImageView) view.findViewById(R.id.bot_pic);
+                Glide.with(view.getContext()).load(getItem(position).imageUrl).into(botPic);
+                return view;
             }
         };
 
