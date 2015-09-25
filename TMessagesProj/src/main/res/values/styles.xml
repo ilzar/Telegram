@@ -50,7 +50,7 @@
     <!--ACTION BAR ITEMS-->
 
     <style name="ActionBar.Transparent.TMessages.Item" parent="android:TextAppearance.Widget.IconMenu.Item">
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">@color/base_font</item>
         <item name="android:textSize">18sp</item>
     </style>
 
@@ -67,7 +67,7 @@
 
     <style name="Theme.TMessages.EditText" parent="android:Widget.EditText">
         <item name="android:background">@drawable/edit_text</item>
-        <item name="android:textColor">#fff220</item>
+        <item name="android:textColor">@color/base_font</item>
     </style>
 
     <!--ALERT DIALOG-->

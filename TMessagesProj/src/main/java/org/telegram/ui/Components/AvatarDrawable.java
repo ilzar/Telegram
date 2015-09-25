@@ -37,9 +37,9 @@ public class AvatarDrawable extends Drawable {
 //    private static int[] arrColorsProfilesBack = {0xffca6056, 0xfff18944, 0xff7d6ac4, 0xff56a14c, 0xff4492ac, 0xff4c84b6, 0xff7d6ac4, 0xff4c84b6};
 //    private static int[] arrColorsProfilesText = {0xfff9cbc5, 0xfffdddc8, 0xffcdc4ed, 0xffc0edba, 0xffb8e2f0, 0xffb3d7f7, 0xffcdc4ed, 0xffb3d7f7};
 //    private static int[] arrColorsNames = {0xffca5650, 0xffd87b29, 0xff4e92cc, 0xff50b232, 0xff42b1a8, 0xff4e92cc, 0xff4e92cc, 0xff4e92cc};
-    private static int[] arrColors = {0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF00008};
-    private static int[] arrColorsProfiles = {0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF00008};
-    private static int[] arrColorsProfilesBack = {0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080, 0xFF000080};
+    private static int[] arrColors = {R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, 0xFF00008};
+    private static int[] arrColorsProfiles = {R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, 0xFF00008};
+    private static int[] arrColorsProfilesBack = {R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background, R.color.base_background};
     private static int[] arrColorsProfilesText = {0xfff9cbc5, 0xfffdddc8, 0xffcdc4ed, 0xffc0edba, 0xffb8e2f0, 0xffb3d7f7, 0xffcdc4ed, 0xffb3d7f7};
     private static int[] arrColorsNames = {0xffca5650, 0xffd87b29, 0xff4e92cc, 0xff50b232, 0xff42b1a8, 0xff4e92cc, 0xff4e92cc, 0xff4e92cc};
     private static int[] arrColorsButtons = {R.drawable.bar_selector_red, R.drawable.bar_selector_orange, R.drawable.bar_selector_violet,

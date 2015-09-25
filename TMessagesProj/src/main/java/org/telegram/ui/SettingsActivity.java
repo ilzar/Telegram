@@ -278,7 +278,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     @Override
     public View createView(Context context) {
 //        actionBar.setBackgroundColor(AvatarDrawable.getProfileBackColorForId(5));
-        actionBar.setBackgroundColor(0xFF000080);
+        actionBar.setBackgroundColor(context.getResources().getColor(R.color.base_background));
         actionBar.setItemsBackground(AvatarDrawable.getButtonColorForId(5));
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         actionBar.setExtraHeight(AndroidUtilities.dp(88), false);
@@ -373,7 +373,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         actionBar.addView(nameTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.BOTTOM, LocaleController.isRTL ? 16 : 97, 0, LocaleController.isRTL ? 97 : 16, 51));
 
         onlineTextView = new TextView(context);
-        onlineTextView.setTextColor(AvatarDrawable.getProfileTextColorForId(5));
+//        onlineTextView.setTextColor(AvatarDrawable.getProfileTextColorForId(5));
+        onlineTextView.setTextColor(R.color.base_font);
         onlineTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         onlineTextView.setLines(1);
         onlineTextView.setMaxLines(1);
@@ -386,7 +387,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         listView.setDivider(null);
         listView.setDividerHeight(0);
         listView.setVerticalScrollBarEnabled(false);
-        AndroidUtilities.setListViewEdgeEffectColor(listView, AvatarDrawable.getProfileBackColorForId(5));
+//        AndroidUtilities.setListViewEdgeEffectColor(listView, AvatarDrawable.getProfileBackColorForId(5));
+        AndroidUtilities.setListViewEdgeEffectColor(listView, R.color.base_background);
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP | Gravity.LEFT));
         listView.setAdapter(listAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -1016,7 +1018,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
         AvatarDrawable avatarDrawable = new AvatarDrawable(user, true);
 //        avatarDrawable.setColor(0xff5c98cd);
-        avatarDrawable.setColor(0xff000080);
+        avatarDrawable.setColor(R.color.base_background);
         if (avatarImage != null) {
             avatarImage.setImage(photo, "50_50", avatarDrawable);
             avatarImage.getImageReceiver().setVisible(!PhotoViewer.getInstance().isShowingImage(photoBig), false);
