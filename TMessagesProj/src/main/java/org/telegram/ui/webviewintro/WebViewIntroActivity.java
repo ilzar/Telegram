@@ -31,7 +31,7 @@ public class WebViewIntroActivity extends Activity {
 
         WebView webview = (WebView) findViewById(R.id.webview_intro);
         webview.setWebViewClient(new WebViewClient());
-        webview.loadUrl("http://www.yandex.com.tr/fb");
+        webview.loadUrl("http://vaseker.github.io/fenergram-land/ios.index.html");
 
         Button startMessaging = (Button) findViewById(R.id.start_messaging);
         startMessaging.setOnClickListener(new View.OnClickListener() {
