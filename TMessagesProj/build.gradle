@@ -11,7 +11,6 @@ dependencies {
     compile 'com.googlecode.mp4parser:isoparser:1.0.6'
     compile 'org.apache.httpcomponents:httpmime:4.2.1'
     compile 'com.github.bumptech.glide:glide:3.6.1'
-    compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
 }
 
 android {
@@ -81,8 +80,6 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.telegram.messenger.fb"
-
         minSdkVersion 14
         //noinspection OldTargetApi
         targetSdkVersion 22
