@@ -16,8 +16,8 @@
         <item name="android:colorBackground">@android:color/white</item>
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:colorPrimaryDark">#435e7e</item>
-        <item name="android:colorPrimary">#54759e</item>
+        <item name="android:colorPrimaryDark">#fff220</item>
+        <item name="android:colorPrimary">#9e0c4d</item>
     </style>
 
     <style name="Theme.TMessages" parent="@android:style/Theme.Material.Light">
@@ -32,10 +32,10 @@
         <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
         <item name="android:editTextStyle">@style/Theme.TMessages.EditText</item>
         <item name="android:actionBarItemBackground">@drawable/bar_selector_style</item>
-        <item name="android:colorPrimaryDark">#33000000</item>
-        <item name="android:colorPrimary">#54759e</item>
+        <item name="android:colorPrimaryDark">#fff220</item>
+        <item name="android:colorPrimary">#0c9e87</item>
         <item name="android:alertDialogTheme">@style/Theme.TMessages.Dialog.Alert</item>
-        <item name="android:colorControlActivated">#4d83b3</item>
+        <item name="android:colorControlActivated">#26b310</item>
     </style>
 
     <style name="Theme.TMessages.PopupNotification" parent="Theme.TMessages">
@@ -48,13 +48,13 @@
     </style>
 
     <style name="Theme.TMessages.Dialog.Alert" parent="android:style/Theme.Material.Light.Dialog.Alert">
-        <item name="android:colorAccent">#4d83b3</item>
+        <item name="android:colorAccent">#a71cb3</item>
     </style>
 
     <!--ACTION BAR-->
 
     <style name="ActionBar.Transparent.TMessages.Start" parent="android:style/Widget.Material.Light.ActionBar">
-        <item name="android:background">#ff54759e</item>
+        <item name="android:background">#9e190b</item>
         <item name="android:logo">@drawable/transparent</item>
         <item name="android:title">""</item>
     </style>
@@ -85,7 +85,7 @@
 
     <style name="Theme.TMessages.EditText" parent="android:Widget.Material.Light.EditText">
         <item name="android:background">@drawable/edit_text</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">#fff220</item>
     </style>
 
     <!--ALERT DIALOG-->

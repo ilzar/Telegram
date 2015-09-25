@@ -277,7 +277,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
     @Override
     public View createView(Context context) {
-        actionBar.setBackgroundColor(AvatarDrawable.getProfileBackColorForId(5));
+//        actionBar.setBackgroundColor(AvatarDrawable.getProfileBackColorForId(5));
+        actionBar.setBackgroundColor(0xFF000080);
         actionBar.setItemsBackground(AvatarDrawable.getButtonColorForId(5));
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         actionBar.setExtraHeight(AndroidUtilities.dp(88), false);
@@ -361,7 +362,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         });
 
         nameTextView = new TextView(context);
-        nameTextView.setTextColor(0xffffffff);
+        nameTextView.setTextColor(0xFFF4EE00);
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
         nameTextView.setLines(1);
         nameTextView.setMaxLines(1);
@@ -1014,7 +1015,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             photoBig = user.photo.photo_big;
         }
         AvatarDrawable avatarDrawable = new AvatarDrawable(user, true);
-        avatarDrawable.setColor(0xff5c98cd);
+//        avatarDrawable.setColor(0xff5c98cd);
+        avatarDrawable.setColor(0xff000080);
         if (avatarImage != null) {
             avatarImage.setImage(photo, "50_50", avatarDrawable);
             avatarImage.getImageReceiver().setVisible(!PhotoViewer.getInstance().isShowingImage(photoBig), false);
