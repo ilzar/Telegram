@@ -2,6 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -143,6 +144,9 @@ public class BotStoreActivity extends BaseFragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Bundle args = new Bundle();
+                args.putInt("user_id", 109193890);
+                presentFragment(new ChatActivity(args));
             }
         });
 
