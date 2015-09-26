@@ -476,7 +476,8 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         }*/
         if (!mainFragmentsStack.isEmpty()) {
             TLRPC.TL_inputStickerSetShortName stickerset = new TLRPC.TL_inputStickerSetShortName();
-            stickerset.short_name = "footbalistafa1";
+//            stickerset.short_name = "footbalistafa1";
+            stickerset.short_name = "fngr_1";
             TLRPC.TL_messages_installStickerSet req = new TLRPC.TL_messages_installStickerSet();
             req.stickerset = stickerset;
             ConnectionsManager.getInstance().sendRequest(req, new RequestDelegate() {
