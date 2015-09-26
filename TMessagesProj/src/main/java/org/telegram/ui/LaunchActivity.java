@@ -768,7 +768,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                     }
                                 } else if (scheme.equals("tg") || scheme.equals("fg")) {
                                     String url = data.toString();
-                                    url.replace("fg://", "tg://");
+                                    url = url.replace("fg://", "tg://");
                                     if (url.startsWith("tg:resolve") || url.startsWith("tg://resolve")) {
                                         url = url.replace("tg:resolve", "tg://telegram.org").replace("tg://resolve", "tg://telegram.org");
                                         data = Uri.parse(url);
