@@ -15,6 +15,8 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
 
 public class MenuDrawable extends Drawable {
 
@@ -29,7 +31,7 @@ public class MenuDrawable extends Drawable {
 
     public MenuDrawable() {
         super();
-        paint.setColor(0xffffffff);
+        paint.setColor(ApplicationLoader.applicationContext.getResources().getColor(R.color.base_background));
         paint.setStrokeWidth(AndroidUtilities.dp(2));
     }
 

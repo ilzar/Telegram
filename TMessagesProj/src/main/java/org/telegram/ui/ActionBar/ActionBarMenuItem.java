@@ -395,10 +395,11 @@ public class ActionBarMenuItem extends FrameLayoutFixed {
             searchContainer.setLayoutParams(layoutParams);
             searchContainer.setVisibility(GONE);
 
-            searchField = new EditText(getContext());
+            Context context = getContext();
+            searchField = new EditText(context);
             searchField.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
             searchField.setHintTextColor(0x88ffffff);
-            searchField.setTextColor(0xffffffff);
+            searchField.setTextColor(context.getResources().getColor(R.color.base_background));
             searchField.setSingleLine(true);
             searchField.setBackgroundResource(0);
             searchField.setPadding(0, 0, 0, 0);

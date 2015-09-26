@@ -973,7 +973,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         avatarContainer.addView(nameTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.BOTTOM, 54, 0, 0, 22));
 
         onlineTextView = new TextView(context);
-        onlineTextView.setTextColor(0xffd7e8f7);
+        onlineTextView.setTextColor(context.getResources().getColor(R.color.base_background));
         onlineTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         onlineTextView.setLines(1);
         onlineTextView.setMaxLines(1);

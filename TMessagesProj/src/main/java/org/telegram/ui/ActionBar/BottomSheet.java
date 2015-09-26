@@ -317,7 +317,7 @@ public class BottomSheet extends Dialog {
 
         setContentView(container, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
-        ciclePaint.setColor(0xffffffff);
+        ciclePaint.setColor(getContext().getResources().getColor(R.color.base_background));
 
         containerView = new LinearLayout(getContext()) {
 
