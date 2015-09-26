@@ -256,8 +256,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     public View createView(Context context) {
 //        actionBar.setBackgroundColor(AvatarDrawable.getProfileBackColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
         actionBar.setBackgroundColor(context.getResources().getColor(R.color.base_background));
-//        actionBar.setItemsBackground(AvatarDrawable.getButtonColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
-        actionBar.setItemsBackground(context.getResources().getColor(R.color.base_background));
+        actionBar.setItemsBackground(AvatarDrawable.getButtonColorForId(user_id != 0 || ChatObject.isChannel(chat_id) ? 5 : chat_id));
 
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         actionBar.setExtraHeight(AndroidUtilities.dp(88), false);
