@@ -143,7 +143,7 @@ public class ChantsActivity extends BaseFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long itemId) {
                 Chant chant = (Chant) adapterView.getItemAtPosition(pos);
                 if (!TextUtils.isEmpty(chant.url)) {
-                    MediaPlayer player = getPlayer();
+                    final MediaPlayer player = getPlayer();
                     if (chant.equals(currentlyPlayingChant)) {
                         player.stop();
                         player.reset();
@@ -161,12 +161,12 @@ public class ChantsActivity extends BaseFragment {
                             player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 @Override
                                 public void onCompletion(MediaPlayer mp) {
+                                    player.reset();
                                     setCurrentChant(null);
                                 }
                             });
                             setCurrentChant(chant);
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        } catch (Exception ignored) {
                         }
                     }
                 }
