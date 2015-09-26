@@ -128,13 +128,14 @@ public class ActionBar extends FrameLayout {
         if (titleTextView != null) {
             return;
         }
-        titleTextView = new TextView(getContext());
+        Context context = getContext();
+        titleTextView = new TextView(context);
         titleTextView.setGravity(Gravity.LEFT);
         titleTextView.setLines(1);
         titleTextView.setMaxLines(1);
         titleTextView.setSingleLine(true);
         titleTextView.setEllipsize(TextUtils.TruncateAt.END);
-        titleTextView.setTextColor(0xffffffff);
+        titleTextView.setTextColor(context.getResources().getColor(R.color.base_background));
         titleTextView.setTypeface(AndroidUtilities.getTypeface("fonts/rmedium.ttf"));
         addView(titleTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP));
     }

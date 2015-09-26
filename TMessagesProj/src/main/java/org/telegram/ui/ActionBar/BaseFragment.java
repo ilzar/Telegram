@@ -110,7 +110,7 @@ public class BaseFragment {
                 Context parentContext = parentLayout.getContext();
                 actionBar = new ActionBar(parentContext);
                 actionBar.parentFragment = this;
-                actionBar.setBackgroundColor(parentContext.getResources().getColor(R.color.base_background));
+                actionBar.setBackgroundColor(parentContext.getResources().getColor(R.color.base_font)); // top menu background
                 actionBar.setItemsBackground(R.drawable.bar_selector);
             }
         }
