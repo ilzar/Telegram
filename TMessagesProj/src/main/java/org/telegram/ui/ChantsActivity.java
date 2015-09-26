@@ -2,6 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -125,7 +126,24 @@ public class ChantsActivity extends BaseFragment {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long itemId) {
+                Chant chant = (Chant) adapterView.getItemAtPosition(pos);
+                if (!TextUtils.isEmpty(chant.url)) {
+//                    TLRPC.Message message = new TLRPC.Message();
+//                    int id = chant.url.hashCode();
+//                    message.id = id;
+//                    message.media = new TLRPC.TL_messageMediaAudio();
+//                    message.media.audio = new TLRPC.Audio();
+//                    message.media.document = new TLRPC.TL_document();
+//                    message.media.document.file_name = chant.url;
+//                    message.media.document.id = id;
+//                    message.media.document.dc_id = id;
+//
+//                    message.media.document.attributes.add(new TLRPC.TL_documentAttributeAudio());
+//
+//                    MessageObject messageObject = new MessageObject(message, null, false);
+//                    MediaController.getInstance().playAudio(messageObject);
+                }
             }
         });
 

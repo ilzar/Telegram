@@ -337,11 +337,11 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     presentFragment(new BotStoreActivity());
                     drawerLayoutContainer.closeDrawer(false);
                 } else if (position == 10) {
-                    presentFragment(new ChantsActivity());
-                    drawerLayoutContainer.closeDrawer(false);
-                } else if (position == 11) {
                     drawerLayoutContainer.closeDrawer(false);
                     startActivity(new Intent(LaunchActivity.this, CardActivity.class));
+                } else if (position == 11) {
+                    presentFragment(new ChantsActivity());
+                    drawerLayoutContainer.closeDrawer(false);
                 }
             }
         });
