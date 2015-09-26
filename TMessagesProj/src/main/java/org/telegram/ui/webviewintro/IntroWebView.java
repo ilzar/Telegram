@@ -7,7 +7,7 @@ import android.webkit.WebView;
 /**
  * Created by ilzar on 25.09.15.
  */
-class IntroWebView extends WebView {
+public class IntroWebView extends WebView {
 
     public IntroWebView(Context context) {
         super(context);

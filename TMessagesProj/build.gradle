@@ -53,6 +53,7 @@ android {
             debuggable false
             jniDebuggable false
             signingConfig signingConfigs.release
+            applicationIdSuffix ".fenegram"
         }
 
         foss {
@@ -60,6 +61,10 @@ android {
             jniDebuggable false
             signingConfig signingConfigs.release
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 
     sourceSets.main {
