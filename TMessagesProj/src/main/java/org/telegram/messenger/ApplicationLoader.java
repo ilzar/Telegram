@@ -30,6 +30,7 @@ import android.util.Base64;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.yandex.metrica.YandexMetrica;
 
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
@@ -45,6 +46,7 @@ public class ApplicationLoader extends Application {
     private GoogleCloudMessaging gcm;
     private AtomicInteger msgId = new AtomicInteger();
     private String regid;
+    private static final String METRICA_API_KEY = "54722b3c-f39f-4023-988d-14ff3a73108e";
     public static final String EXTRA_MESSAGE = "message";
     public static final String PROPERTY_REG_ID = "registration_id";
     private static final String PROPERTY_APP_VERSION = "appVersion";
@@ -248,6 +250,8 @@ public class ApplicationLoader extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        YandexMetrica.activate(getApplicationContext(), METRICA_API_KEY);
 
         if (Build.VERSION.SDK_INT < 11) {
             java.lang.System.setProperty("java.net.preferIPv4Stack", "true");
