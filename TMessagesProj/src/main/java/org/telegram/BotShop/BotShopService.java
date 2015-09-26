@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class BotShopService {
 
-    private static final String URL = "http://fenegram-bot-store.herokuapp.com/list";
+    private static final String URL = "http://fenegram.herokuapp.com/bots";
 
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mLastRequest;
@@ -65,10 +65,11 @@ public class BotShopService {
                     final int length = items.length();
                     for (int i = 0; i < length; i++) {
                         final JSONObject item = items.getJSONObject(i);
-                        String name = item.getString("name");
+                        String name = item.getString("usernamename");
                         String image = item.getString("image");
                         String description = item.getString("description");
-                        final BotItem botItem = new BotItem(name, description, image);
+                        String id = item.getString("id");
+                        final BotItem botItem = new BotItem(name, description, image, id);
                         botItems.add(botItem);
                     }
                     botShopCallback.onSuccess(new BotItems(botItems));

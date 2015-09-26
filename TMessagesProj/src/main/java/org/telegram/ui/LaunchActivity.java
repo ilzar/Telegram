@@ -335,6 +335,9 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 } else if (position == 9) {
                     presentFragment(new BotStoreActivity());
                     drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 10) {
+                    presentFragment(new ChantsActivity());
+                    drawerLayoutContainer.closeDrawer(false);
                 }
             }
         });
