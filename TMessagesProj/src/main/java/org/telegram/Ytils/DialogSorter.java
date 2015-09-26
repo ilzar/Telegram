@@ -17,7 +17,7 @@ public class DialogSorter {
     private int topBotId = -1;
 
     public DialogSorter() {
-        ApplicationLoader.applicationContext
+        topBotId = ApplicationLoader.applicationContext
             .getSharedPreferences("YandexPreferences", Context.MODE_PRIVATE)
             .getInt("mainBotId", -1);
     }
