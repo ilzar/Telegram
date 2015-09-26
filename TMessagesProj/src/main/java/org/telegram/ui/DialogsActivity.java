@@ -33,6 +33,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.telegram.Ytils.BotSubscriber;
+import org.telegram.Ytils.BotSubscriber2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
@@ -797,6 +799,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 dialogsSearchAdapter.loadRecentSearch();
             }
         }
+        BotSubscriber2.INSTANCE.init();
     }
 
     private ArrayList<TLRPC.Dialog> getDialogsArray() {
