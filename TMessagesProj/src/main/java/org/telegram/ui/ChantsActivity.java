@@ -1,7 +1,10 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -11,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +34,9 @@ public class ChantsActivity extends BaseFragment {
     private TextView emptyTextView;
     private ListView listView;
     private ArrayAdapter<Chant> listViewAdapter;
+    private static MediaPlayer mediaPlayer;
+
+    private static Chant currentlyPlayingChant;
 
     @Override
     public View createView(Context context) {
@@ -49,7 +56,14 @@ public class ChantsActivity extends BaseFragment {
         listViewAdapter = new ArrayAdapter<Chant>(context, R.layout.list_item_chant, R.id.chant_title) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                return super.getView(position, convertView, parent);
+                View v =  super.getView(position, convertView, parent);
+                ImageView playPause = (ImageView) v.findViewById(R.id.btn_play);
+                if (getItem(position).equals(currentlyPlayingChant)) {
+                    playPause.setImageResource(R.drawable.ic_action_pause);
+                } else {
+                    playPause.setImageResource(R.drawable.ic_action_play);
+                }
+                return v;
             }
         };
 
@@ -129,25 +143,51 @@ public class ChantsActivity extends BaseFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long itemId) {
                 Chant chant = (Chant) adapterView.getItemAtPosition(pos);
                 if (!TextUtils.isEmpty(chant.url)) {
-//                    TLRPC.Message message = new TLRPC.Message();
-//                    int id = chant.url.hashCode();
-//                    message.id = id;
-//                    message.media = new TLRPC.TL_messageMediaAudio();
-//                    message.media.audio = new TLRPC.Audio();
-//                    message.media.document = new TLRPC.TL_document();
-//                    message.media.document.file_name = chant.url;
-//                    message.media.document.id = id;
-//                    message.media.document.dc_id = id;
-//
-//                    message.media.document.attributes.add(new TLRPC.TL_documentAttributeAudio());
-//
-//                    MessageObject messageObject = new MessageObject(message, null, false);
-//                    MediaController.getInstance().playAudio(messageObject);
+                    MediaPlayer player = getPlayer();
+                    if (chant.equals(currentlyPlayingChant)) {
+                        player.stop();
+                        player.reset();
+                        setCurrentChant(null);
+                    } else {
+                        try {
+                            player.setDataSource(chant.url);
+                            player.prepareAsync();
+                            player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                                @Override
+                                public void onPrepared(MediaPlayer mp) {
+                                    mp.start();
+                                }
+                            });
+                            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mp) {
+                                    setCurrentChant(null);
+                                }
+                            });
+                            setCurrentChant(chant);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         });
 
         return fragmentView;
+    }
+
+    private void setCurrentChant(Chant chant) {
+        currentlyPlayingChant = chant;
+        listViewAdapter.notifyDataSetChanged();
+    }
+
+    @NonNull
+    private MediaPlayer getPlayer() {
+        if (mediaPlayer == null) {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        }
+        return mediaPlayer;
     }
 
 }
