@@ -961,7 +961,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
 
         nameTextView = new TextView(context);
-        nameTextView.setTextColor(0xffffffff);
+        nameTextView.setTextColor(context.getResources().getColor(R.color.base_background));
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
         nameTextView.setLines(1);
         nameTextView.setMaxLines(1);
