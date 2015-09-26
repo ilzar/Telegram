@@ -197,7 +197,7 @@ public class ContactsController {
     }
 
     public String getInviteText() {
-        return inviteText != null ? inviteText : LocaleController.getString("InviteText", R.string.InviteText);
+        return inviteText != null ? inviteText : LocaleController.formatString("InviteText", R.string.InviteText,  R.string.FenegramLandingUrl);
     }
 
     public void checkAppAccount() {

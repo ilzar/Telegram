@@ -327,7 +327,7 @@ public class MessageObject {
             } else if (message.media instanceof TLRPC.TL_messageMediaContact) {
                 messageText = LocaleController.getString("AttachContact", R.string.AttachContact);
             } else if (message.media instanceof TLRPC.TL_messageMediaUnsupported) {
-                messageText = LocaleController.getString("UnsuppotedMedia", R.string.UnsuppotedMedia);
+                messageText = LocaleController.formatString("UnsuppotedMedia", R.string.UnsuppotedMedia, R.string.FenegramLandingUrl);
             } else if (message.media instanceof TLRPC.TL_messageMediaDocument) {
                 if (isSticker()) {
                     String sch = getStrickerChar();

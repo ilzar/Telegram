@@ -3105,7 +3105,7 @@ public class MessagesController implements NotificationCenter.NotificationCenter
                         UserConfig.saveConfig(false);
                     }
                     TLRPC.TL_updateServiceNotification update = new TLRPC.TL_updateServiceNotification();
-                    update.message = LocaleController.getString("updateText", R.string.updateText);
+                    update.message = LocaleController.formatString("updateText", R.string.updateText, R.string.FenegramLandingUrl);
                     update.media = new TLRPC.TL_messageMediaEmpty();
                     update.type = "update";
                     update.popup = false;

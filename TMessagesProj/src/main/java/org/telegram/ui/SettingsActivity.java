@@ -1189,7 +1189,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     view = new TextInfoCell(mContext);
                     try {
                         PackageInfo pInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
-                        ((TextInfoCell) view).setText(String.format(Locale.US, "Telegram for Android v%s (%d)", pInfo.versionName, pInfo.versionCode));
+                        ((TextInfoCell) view).setText(String.format(Locale.US, "Fenegram for Android v%s (%d)", pInfo.versionName, pInfo.versionCode));
                     } catch (Exception e) {
                         FileLog.e("tmessages", e);
                     }

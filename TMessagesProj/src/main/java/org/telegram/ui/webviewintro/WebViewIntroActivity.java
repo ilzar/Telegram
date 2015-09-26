@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
@@ -46,7 +47,7 @@ public class WebViewIntroActivity extends Activity {
                 Toast.makeText(WebViewIntroActivity.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
             }
         });
-        webview.loadUrl("http://vaseker.github.io/fenergram-land/ios.index.html");
+        webview.loadUrl(LocaleController.getString("TelegramLandingUrl", R.string.FenegramLandingUrl));
 
         Button startMessaging = (Button) findViewById(R.id.start_messaging);
         startMessaging.setOnClickListener(new View.OnClickListener() {
