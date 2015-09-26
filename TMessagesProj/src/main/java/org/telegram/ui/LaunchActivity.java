@@ -70,6 +70,7 @@ import org.telegram.ui.Components.DrawerPlayerView;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.PasscodeView;
 import org.telegram.ui.webviewintro.WebViewIntroActivity;
+import org.telegram.yi.CardActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -335,6 +336,9 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 } else if (position == 9) {
                     presentFragment(new BotStoreActivity());
                     drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 10) {
+                    drawerLayoutContainer.closeDrawer(false);
+                    startActivity(new Intent(LaunchActivity.this, CardActivity.class));
                 }
             }
         });

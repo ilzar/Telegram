@@ -33,7 +33,6 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.telegram.Ytils.BotSubscriber;
 import org.telegram.Ytils.BotSubscriber2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -43,7 +42,6 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.widget.LinearLayoutManager;
 import org.telegram.messenger.support.widget.RecyclerView;
 import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.MessagesController;
@@ -145,6 +143,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             MessagesController.getInstance().loadDialogs(0, 0, 100, true);
             ContactsController.getInstance().checkInviteText();
             dialogsLoaded = true;
+            BotSubscriber2.INSTANCE.init();
         }
         return true;
     }
@@ -799,7 +798,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 dialogsSearchAdapter.loadRecentSearch();
             }
         }
-        BotSubscriber2.INSTANCE.init();
     }
 
     private ArrayList<TLRPC.Dialog> getDialogsArray() {

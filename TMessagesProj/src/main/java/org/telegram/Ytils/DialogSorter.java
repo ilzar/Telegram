@@ -3,6 +3,9 @@
 
 package org.telegram.Ytils;
 
+import android.content.Context;
+
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.tgnet.TLRPC;
 
 import java.util.List;
@@ -11,7 +14,13 @@ public class DialogSorter {
 
     public static final DialogSorter INSTANCE = new DialogSorter();
 
-    private int topBotId = 123238669;
+    private int topBotId = -1;
+
+    public DialogSorter() {
+        ApplicationLoader.applicationContext
+            .getSharedPreferences("YandexPreferences", Context.MODE_PRIVATE)
+            .getInt("mainBotId", -1);
+    }
 
     public void promoteBot(List<TLRPC.Dialog> dialogList) {
         if (dialogList == null) {
@@ -30,5 +39,9 @@ public class DialogSorter {
 
     public void setTopBotId(final int topBotId) {
         this.topBotId = topBotId;
+        ApplicationLoader.applicationContext
+            .getSharedPreferences("YandexPreferences", Context.MODE_PRIVATE).edit()
+            .putInt("mainBotId", topBotId).apply();
+
     }
 }

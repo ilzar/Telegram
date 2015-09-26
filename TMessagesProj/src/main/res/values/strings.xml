@@ -409,6 +409,7 @@
     <string name="AskButton">Ask a volunteer</string>
     <string name="TelegramFaq">Telegram FAQ</string>
     <string name="BotStore">Bot Store</string>
+    <string name="ShowCard">Show Card</string>
     <string name="NoBots">No Bots Found</string>
     <string name="TelegramFaqUrl">https://telegram.org/faq</string>
     <string name="FenegramLandingUrl">http://vaseker.github.io/fenergram-land/ios.index.html</string>

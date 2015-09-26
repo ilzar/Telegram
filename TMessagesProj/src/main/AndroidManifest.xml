@@ -122,6 +122,10 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
 
+        <activity android:name="org.telegram.yi.CardActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+
         <receiver android:name=".AutoMessageHeardReceiver">
             <intent-filter>
                 <action android:name="org.telegram.messenger.ACTION_MESSAGE_HEARD"/>
