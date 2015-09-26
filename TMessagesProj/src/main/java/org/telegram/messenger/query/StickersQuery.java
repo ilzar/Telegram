@@ -351,6 +351,7 @@ public class StickersQuery {
         TLRPC.TL_messages_getStickerSet req = new TLRPC.TL_messages_getStickerSet();
         req.stickerset = stickerSet;
 
+        final ProgressDialog finalProgressDialog = progressDialog;
         final int reqId = ConnectionsManager.getInstance().sendRequest(req, new RequestDelegate() {
             @Override
             public void run(final TLObject response, final TLRPC.TL_error error) {
@@ -358,7 +359,7 @@ public class StickersQuery {
                     @Override
                     public void run() {
                         try {
-                            progressDialog.dismiss();
+                            finalProgressDialog.dismiss();
                         } catch (Exception e) {
                             FileLog.e("tmessages", e);
                         }

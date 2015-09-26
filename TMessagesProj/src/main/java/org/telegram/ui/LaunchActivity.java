@@ -474,6 +474,23 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         /*if (BuildVars.DEBUG_VERSION) {
             ViewServer.get(this).addWindow(this);
         }*/
+        if (!mainFragmentsStack.isEmpty()) {
+            TLRPC.TL_inputStickerSetShortName stickerset = new TLRPC.TL_inputStickerSetShortName();
+            stickerset.short_name = "footbalistafa1";
+            TLRPC.TL_messages_installStickerSet req = new TLRPC.TL_messages_installStickerSet();
+            req.stickerset = stickerset;
+            ConnectionsManager.getInstance().sendRequest(req, new RequestDelegate() {
+                @Override
+                public void run(TLObject response, final TLRPC.TL_error error) {
+                    AndroidUtilities.runOnUIThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            StickersQuery.loadStickers(false, true);
+                        }
+                    });
+                }
+            });
+        }
 
         handleIntent(getIntent(), false, savedInstanceState != null, false);
         needLayout();
