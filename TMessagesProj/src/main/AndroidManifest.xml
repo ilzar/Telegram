@@ -110,6 +110,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="tg" />
             </intent-filter>
+            <intent-filter android:icon="@drawable/ic_launcher" android:priority="1">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="fg" />
+            </intent-filter>
         </activity>
         <activity
             android:name="org.telegram.ui.webviewintro.WebViewIntroActivity" >
