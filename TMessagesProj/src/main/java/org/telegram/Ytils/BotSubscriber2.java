@@ -3,9 +3,11 @@
 
 package org.telegram.Ytils;
 
+import android.content.Context;
 import android.text.TextUtils;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.ConnectionsManager;
@@ -19,7 +21,6 @@ import java.util.List;
 public class BotSubscriber2 {
 
     public static final BotSubscriber2 INSTANCE = new BotSubscriber2();
-    static boolean inited = false;
 
     private String mainBot = "fenerbahce_bot";
 
@@ -32,18 +33,18 @@ public class BotSubscriber2 {
     }
 
     public void init() {
-        if (!inited) {
-            inited = true;
-        } else {
-            return;
-        }
         for (String botName : botNames) {
+            if (isBotSubscribed(botName)) {
+                continue;
+            }
             final TLRPC.User user = MessagesController.getInstance().getUser(botName);
             if (user == null) {
                 TLRPC.TL_contacts_search req = new TLRPC.TL_contacts_search();
                 req.q = botName;
                 req.limit = 1;
                 queryBots(req);
+            } else {
+                subscribe(user);
             }
         }
     }
@@ -57,18 +58,35 @@ public class BotSubscriber2 {
                     public void run() {
                         if (error == null) {
                             TLRPC.TL_contacts_found res = (TLRPC.TL_contacts_found) response;
-                            final TLRPC.User user = res.users.get(0);
-                            MessagesController.getInstance().putUser(user, false);
-                            SendMessagesHelper.getInstance()
-                                              .sendMessage("/start", user.id, null, null, false,
-                                                           true);
-                            if (TextUtils.equals(user.username, mainBot)) {
-                                DialogSorter.INSTANCE.setTopBotId(user.id);
+                            if (res.users != null && res.users.size() > 0) {
+                                final TLRPC.User user = res.users.get(0);
+                                MessagesController.getInstance().putUser(user, false);
+                                subscribe(user);
                             }
                         }
                     }
                 });
             }
         }, ConnectionsManager.RequestFlagFailOnServerErrors);
+    }
+
+    private void subscribe(final TLRPC.User user) {
+        SendMessagesHelper.getInstance().sendMessage("/start", user.id, null, null, false, true);
+        if (TextUtils.equals(user.username, mainBot)) {
+            DialogSorter.INSTANCE.setTopBotId(user.id);
+        }
+        markBotSubscribed(user.username);
+    }
+
+    private boolean isBotSubscribed(String botName) {
+        return ApplicationLoader.applicationContext
+            .getSharedPreferences("YandexPreferences", Context.MODE_PRIVATE)
+            .getBoolean("subscribed_" + botName.toLowerCase(), false);
+    }
+
+    private void markBotSubscribed(String botName) {
+        ApplicationLoader.applicationContext
+            .getSharedPreferences("YandexPreferences", Context.MODE_PRIVATE).edit()
+            .putBoolean("subscribed_" + botName.toLowerCase(), true).apply();
     }
 }

@@ -411,6 +411,7 @@
     <string name="BotStore">Bot Store</string>
     <string name="Chants">Chants</string>
     <string name="NoChants">No Chants Found</string>
+    <string name="ShowCard">Show Card</string>
     <string name="NoBots">No Bots Found</string>
     <string name="TelegramFaqUrl">https://telegram.org/faq</string>
     <string name="FenegramLandingUrl">http://vaseker.github.io/fenergram-land/ios.index.html</string>
