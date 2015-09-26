@@ -42,6 +42,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.yandex.metrica.YandexMetrica;
+
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.ChatObject;
@@ -764,8 +766,9 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                             }
                                         }
                                     }
-                                } else if (scheme.equals("tg")) {
+                                } else if (scheme.equals("tg") || scheme.equals("fg")) {
                                     String url = data.toString();
+                                    url = url.replace("fg://", "tg://");
                                     if (url.startsWith("tg:resolve") || url.startsWith("tg://resolve")) {
                                         url = url.replace("tg:resolve", "tg://telegram.org").replace("tg://resolve", "tg://telegram.org");
                                         data = Uri.parse(url);
@@ -1465,6 +1468,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     @Override
     protected void onPause() {
         super.onPause();
+        YandexMetrica.onPauseActivity(this);
         onPasscodePause();
         actionBarLayout.onPause();
         if (AndroidUtilities.isTablet()) {
@@ -1496,6 +1500,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     @Override
     protected void onResume() {
         super.onResume();
+        YandexMetrica.onResumeActivity(this);
         onPasscodeResume();
         if (passcodeView.getVisibility() != View.VISIBLE) {
             actionBarLayout.onResume();

@@ -47,7 +47,7 @@ public class WebViewIntroActivity extends Activity {
                 Toast.makeText(WebViewIntroActivity.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
             }
         });
-        webview.loadUrl(LocaleController.getString("TelegramLandingUrl", R.string.FenegramLandingUrl));
+        webview.loadUrl(getString(R.string.FenegramLandingUrl));
 
         Button startMessaging = (Button) findViewById(R.id.start_messaging);
         startMessaging.setOnClickListener(new View.OnClickListener() {

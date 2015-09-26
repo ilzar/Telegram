@@ -90,7 +90,7 @@ android {
         minSdkVersion 14
         //noinspection OldTargetApi
         targetSdkVersion 22
-        versionCode 100
+        versionCode 1000
         versionName "1.0.0"
 
         buildConfigField "int", "APP_ID", "${property('app.id')}"
