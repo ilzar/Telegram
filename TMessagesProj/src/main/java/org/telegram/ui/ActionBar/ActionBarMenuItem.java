@@ -398,7 +398,7 @@ public class ActionBarMenuItem extends FrameLayoutFixed {
             Context context = getContext();
             searchField = new EditText(context);
             searchField.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-            searchField.setHintTextColor(0x88ffffff);
+            searchField.setHintTextColor(context.getResources().getColor(R.color.base_background) & 0x88FFFFFF);
             searchField.setTextColor(context.getResources().getColor(R.color.base_background));
             searchField.setSingleLine(true);
             searchField.setBackgroundResource(0);
