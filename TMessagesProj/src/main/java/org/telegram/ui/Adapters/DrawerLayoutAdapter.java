@@ -75,7 +75,7 @@ public class DrawerLayoutAdapter extends BaseAdapter {
             }
         } else if (type == 2) {
             if (view == null) {
-                view = new DividerCell(mContext);
+                view = new DividerCell(mContext, DividerCell.Scheme.Light);
             }
         } else if (type == 3) {
             if (view == null) {

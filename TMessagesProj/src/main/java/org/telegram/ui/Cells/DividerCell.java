@@ -17,15 +17,23 @@ import org.telegram.messenger.R;
 
 public class DividerCell extends BaseCell {
 
-    private static Paint paint;
+    private final Paint paint;
 
-    public DividerCell(Context context) {
+    private final Paint getDividerPaint(int color) {
+        final Paint paint = new Paint();
+        paint.setColor(color);
+        paint.setStrokeWidth(1);
+        return paint;
+    }
+
+    public enum Scheme {
+        Light,
+        Dark
+    }
+
+    public DividerCell(Context context, Scheme scheme) {
         super(context);
-        if (paint == null) {
-            paint = new Paint();
-            paint.setColor(context.getResources().getColor(R.color.base_background));
-            paint.setStrokeWidth(1);
-        }
+        paint = getDividerPaint(context.getResources().getColor(scheme == Scheme.Light ? R.color.base_font : R.color.base_background));
     }
 
     @Override

@@ -198,7 +198,7 @@ public class ContactsAdapter extends BaseSectionsAdapter {
         int type = getItemViewType(section, position);
         if (type == 4) {
             if (convertView == null) {
-                convertView = new DividerCell(mContext);
+                convertView = new DividerCell(mContext, DividerCell.Scheme.Dark);
                 convertView.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28 : 72), 0, AndroidUtilities.dp(LocaleController.isRTL ? 72 : 28), 0);
             }
         } else if (type == 3) {

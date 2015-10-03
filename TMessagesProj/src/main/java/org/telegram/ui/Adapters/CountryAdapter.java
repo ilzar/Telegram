@@ -136,7 +136,7 @@ public class CountryAdapter extends BaseSectionsAdapter {
         int type = getItemViewType(section, position);
         if (type == 1) {
             if (convertView == null) {
-                convertView = new DividerCell(mContext);
+                convertView = new DividerCell(mContext, DividerCell.Scheme.Dark);
                 convertView.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24 : 72), 0, AndroidUtilities.dp(LocaleController.isRTL ? 72 : 24), 0);
             }
         } else if (type == 0) {

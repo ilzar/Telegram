@@ -1619,7 +1619,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
             } else if (type == 1) {
                 if (view == null) {
-                    view = new DividerCell(mContext);
+                    view = new DividerCell(mContext, DividerCell.Scheme.Light);
                     view.setPadding(AndroidUtilities.dp(72), 0, 0, 0);
                 }
             } else if (type == 2) {
