@@ -70,7 +70,7 @@ public class DrawerProfileCell extends FrameLayout {
         addView(nameTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.BOTTOM, 16, 0, 16, 28));
 
         phoneTextView = new TextView(context);
-        phoneTextView.setTextColor(context.getResources().getColor(R.color.base_font));
+        phoneTextView.setTextColor(context.getResources().getColor(R.color.white));
         phoneTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
         phoneTextView.setLines(1);
         phoneTextView.setMaxLines(1);
@@ -96,7 +96,7 @@ public class DrawerProfileCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         Drawable backgroundDrawable = ApplicationLoader.getCachedWallpaper();
         if (ApplicationLoader.isCustomTheme() && backgroundDrawable != null) {
-            phoneTextView.setTextColor(getResources().getColor(R.color.base_font));
+            phoneTextView.setTextColor(getResources().getColor(R.color.white));
             shadowView.setVisibility(VISIBLE);
             if (backgroundDrawable instanceof ColorDrawable) {
                 backgroundDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
@@ -116,7 +116,7 @@ public class DrawerProfileCell extends FrameLayout {
             }
         } else {
             shadowView.setVisibility(INVISIBLE);
-            phoneTextView.setTextColor(getResources().getColor(R.color.base_font));
+            phoneTextView.setTextColor(getResources().getColor(R.color.white));
             super.onDraw(canvas);
         }
     }

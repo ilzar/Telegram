@@ -375,7 +375,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
         onlineTextView = new TextView(context);
 //        onlineTextView.setTextColor(AvatarDrawable.getProfileTextColorForId(5));
-        onlineTextView.setTextColor(context.getResources().getColor(R.color.base_font));
+        onlineTextView.setTextColor(context.getResources().getColor(R.color.white));
         onlineTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         onlineTextView.setLines(1);
         onlineTextView.setMaxLines(1);
