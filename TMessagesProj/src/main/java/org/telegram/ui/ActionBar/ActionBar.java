@@ -206,7 +206,7 @@ public class ActionBar extends FrameLayout {
 
         if (occupyStatusBar && actionModeTop == null) {
             actionModeTop = new View(getContext());
-            actionModeTop.setBackgroundColor(0x99000000);
+            actionModeTop.setBackgroundColor(getContext().getResources().getColor(R.color.base_font));
             addView(actionModeTop);
             layoutParams = (FrameLayout.LayoutParams)actionModeTop.getLayoutParams();
             layoutParams.height = AndroidUtilities.statusBarHeight;
@@ -266,7 +266,7 @@ public class ActionBar extends FrameLayout {
     public void showActionModeTop() {
         if (occupyStatusBar && actionModeTop == null) {
             actionModeTop = new View(getContext());
-            actionModeTop.setBackgroundColor(0x99000000);
+            actionModeTop.setBackgroundColor(getContext().getResources().getColor(R.color.base_font));
             addView(actionModeTop);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) actionModeTop.getLayoutParams();
             layoutParams.height = AndroidUtilities.statusBarHeight;

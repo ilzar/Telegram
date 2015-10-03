@@ -553,7 +553,7 @@ public class LoginActivity extends BaseFragment {
 
             phoneField = new EditText(context);
             phoneField.setInputType(InputType.TYPE_CLASS_PHONE);
-            phoneField.setTextColor(0xff212121);
+            phoneField.setTextColor(context.getResources().getColor(R.color.base_background));
             phoneField.setHintTextColor(0xff979797);
             phoneField.setPadding(0, 0, 0, 0);
             AndroidUtilities.clearCursorDrawable(phoneField);
@@ -626,7 +626,7 @@ public class LoginActivity extends BaseFragment {
 
             textView = new TextView(context);
             textView.setText(LocaleController.getString("StartText", R.string.StartText));
-            textView.setTextColor(0xff757575);
+            textView.setTextColor(context.getResources().getColor(R.color.base_background));
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             textView.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
             textView.setLineSpacing(AndroidUtilities.dp(2), 1.0f);
@@ -890,7 +890,7 @@ public class LoginActivity extends BaseFragment {
             setOrientation(VERTICAL);
 
             confirmTextView = new TextView(context);
-            confirmTextView.setTextColor(0xff757575);
+            confirmTextView.setTextColor(context.getResources().getColor(R.color.base_background));
             confirmTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             confirmTextView.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
             confirmTextView.setLineSpacing(AndroidUtilities.dp(2), 1.0f);
@@ -902,7 +902,7 @@ public class LoginActivity extends BaseFragment {
             confirmTextView.setLayoutParams(layoutParams);
 
             codeField = new EditText(context);
-            codeField.setTextColor(0xff212121);
+            codeField.setTextColor(context.getResources().getColor(R.color.base_background));
             codeField.setHint(LocaleController.getString("Code", R.string.Code));
             AndroidUtilities.clearCursorDrawable(codeField);
             codeField.setHintTextColor(0xff979797);
@@ -931,7 +931,7 @@ public class LoginActivity extends BaseFragment {
 
             timeText = new TextView(context);
             timeText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
-            timeText.setTextColor(0xff757575);
+            timeText.setTextColor(context.getResources().getColor(R.color.base_background));
             timeText.setLineSpacing(AndroidUtilities.dp(2), 1.0f);
             timeText.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
             addView(timeText);
@@ -987,7 +987,7 @@ public class LoginActivity extends BaseFragment {
 
             TextView wrongNumber = new TextView(context);
             wrongNumber.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.CENTER_HORIZONTAL);
-            wrongNumber.setTextColor(0xff4d83b3);
+            wrongNumber.setTextColor(context.getResources().getColor(R.color.base_background));
             wrongNumber.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             wrongNumber.setLineSpacing(AndroidUtilities.dp(2), 1.0f);
             wrongNumber.setPadding(0, AndroidUtilities.dp(24), 0, 0);
@@ -1356,7 +1356,7 @@ public class LoginActivity extends BaseFragment {
             setOrientation(VERTICAL);
 
             confirmTextView = new TextView(context);
-            confirmTextView.setTextColor(0xff757575);
+            confirmTextView.setTextColor(context.getResources().getColor(R.color.base_background));
             confirmTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             confirmTextView.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
             confirmTextView.setLineSpacing(AndroidUtilities.dp(2), 1.0f);

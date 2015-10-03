@@ -23,7 +23,7 @@ public class DividerCell extends BaseCell {
         super(context);
         if (paint == null) {
             paint = new Paint();
-            paint.setColor(context.getResources().getColor(R.color.base_font));
+            paint.setColor(context.getResources().getColor(R.color.base_background));
             paint.setStrokeWidth(1);
         }
     }
