@@ -278,7 +278,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     @Override
     public View createView(Context context) {
 //        actionBar.setBackgroundColor(AvatarDrawable.getProfileBackColorForId(5));
-        actionBar.setBackgroundColor(context.getResources().getColor(R.color.base_background));
+//        actionBar.setBackgroundColor(context.getResources().getColor(R.color.base_background));
+        actionBar.setBackgroundResource(R.drawable.hamburger);
         actionBar.setItemsBackground(AvatarDrawable.getButtonColorForId(5));
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         actionBar.setExtraHeight(AndroidUtilities.dp(88), false);
@@ -362,7 +363,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         });
 
         nameTextView = new TextView(context);
-        nameTextView.setTextColor(0xFFF4EE00);
+        nameTextView.setTextColor(context.getResources().getColor(R.color.white));
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
         nameTextView.setLines(1);
         nameTextView.setMaxLines(1);
@@ -374,7 +375,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
         onlineTextView = new TextView(context);
 //        onlineTextView.setTextColor(AvatarDrawable.getProfileTextColorForId(5));
-        onlineTextView.setTextColor(context.getResources().getColor(R.color.base_font));
+        onlineTextView.setTextColor(context.getResources().getColor(R.color.white));
         onlineTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         onlineTextView.setLines(1);
         onlineTextView.setMaxLines(1);

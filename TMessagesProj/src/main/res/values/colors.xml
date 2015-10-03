@@ -3,4 +3,5 @@
     <color name="divider">#dcdcdc</color>
     <color name="base_font">#ffe600</color>
     <color name="base_background">#00407D</color>
+    <color name="white">#ffffffff</color>
 </resources>

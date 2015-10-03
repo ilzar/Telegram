@@ -104,9 +104,10 @@ public class ActionBar extends FrameLayout {
         if (subTitleTextView != null) {
             return;
         }
-        subTitleTextView = new TextView(getContext());
+        final Context context = getContext();
+        subTitleTextView = new TextView(context);
         subTitleTextView.setGravity(Gravity.LEFT);
-        subTitleTextView.setTextColor(0xffd7e8f7);
+        subTitleTextView.setTextColor(context.getResources().getColor(R.color.base_background));
         subTitleTextView.setSingleLine(true);
         subTitleTextView.setLines(1);
         subTitleTextView.setMaxLines(1);

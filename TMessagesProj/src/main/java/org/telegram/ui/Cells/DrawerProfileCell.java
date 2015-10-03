@@ -60,7 +60,7 @@ public class DrawerProfileCell extends FrameLayout {
         addView(avatarImageView, LayoutHelper.createFrame(64, 64, Gravity.LEFT | Gravity.BOTTOM, 16, 0, 0, 67));
 
         nameTextView = new TextView(context);
-        nameTextView.setTextColor(0xffffffff);
+        nameTextView.setTextColor(context.getResources().getColor(R.color.white));
         nameTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15);
         nameTextView.setTypeface(AndroidUtilities.getTypeface("fonts/rmedium.ttf"));
         nameTextView.setLines(1);
@@ -70,7 +70,7 @@ public class DrawerProfileCell extends FrameLayout {
         addView(nameTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.BOTTOM, 16, 0, 16, 28));
 
         phoneTextView = new TextView(context);
-        phoneTextView.setTextColor(0xffc2e5ff);
+        phoneTextView.setTextColor(context.getResources().getColor(R.color.white));
         phoneTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
         phoneTextView.setLines(1);
         phoneTextView.setMaxLines(1);
@@ -96,7 +96,7 @@ public class DrawerProfileCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         Drawable backgroundDrawable = ApplicationLoader.getCachedWallpaper();
         if (ApplicationLoader.isCustomTheme() && backgroundDrawable != null) {
-            phoneTextView.setTextColor(0xffffffff);
+            phoneTextView.setTextColor(getResources().getColor(R.color.white));
             shadowView.setVisibility(VISIBLE);
             if (backgroundDrawable instanceof ColorDrawable) {
                 backgroundDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
@@ -116,7 +116,7 @@ public class DrawerProfileCell extends FrameLayout {
             }
         } else {
             shadowView.setVisibility(INVISIBLE);
-            phoneTextView.setTextColor(0xffc2e5ff);
+            phoneTextView.setTextColor(getResources().getColor(R.color.white));
             super.onDraw(canvas);
         }
     }

@@ -41,7 +41,7 @@
             android:background="@drawable/regbtn_states"
             android:layout_gravity="center_horizontal"
             android:textSize="16dp"
-            android:textColor="#ffffff"
+            android:textColor="@color/base_background"
             android:gravity="center"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
