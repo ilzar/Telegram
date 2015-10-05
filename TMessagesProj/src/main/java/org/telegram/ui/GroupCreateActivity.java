@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -187,6 +188,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         userSelectEditText.setPadding(0, 0, 0, 0);
         userSelectEditText.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         userSelectEditText.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.CENTER_VERTICAL);
+        userSelectEditText.getBackground().setColorFilter(context.getResources().getColor(R.color.base_background), PorterDuff.Mode.SRC_ATOP);
         AndroidUtilities.clearCursorDrawable(userSelectEditText);
         frameLayout.addView(userSelectEditText, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT, 10, 0, 10, 0));
 
