@@ -432,7 +432,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 } else if (i == notificationRow) {
                     presentFragment(new NotificationsSettingsActivity());
                 } else if (i == backgroundRow) {
-                    presentFragment(new WallpapersActivity());
+                    presentFragment(new FenegramWallpaperActivity());
                 } else if (i == askQuestionRow) {
                     if (getParentActivity() == null) {
                         return;

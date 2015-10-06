@@ -36,6 +36,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ForegroundDetector;
+import org.telegram.ui.FenegramWallpaperActivity;
 
 import java.io.File;
 import java.io.RandomAccessFile;
@@ -73,7 +74,16 @@ public class ApplicationLoader extends Application {
 
     public static void reloadWallpaper() {
         cachedWallpaper = null;
-        loadWallpaper();
+//        loadWallpaper();
+        loadFenegramWallpaper();
+    }
+
+    public static void loadFenegramWallpaper() {
+        final int resPos =
+            applicationContext.getSharedPreferences("YandexPreferences", MODE_PRIVATE)
+                              .getInt("wallpaper", 0);
+        cachedWallpaper = applicationContext.getResources().getDrawable(
+            FenegramWallpaperActivity.resources[resPos]);
     }
 
     public static void loadWallpaper() {

@@ -365,7 +365,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         actionBarLayout.init(mainFragmentsStack);
         actionBarLayout.setDelegate(this);
 
-        ApplicationLoader.loadWallpaper();
+        ApplicationLoader.loadFenegramWallpaper();
 
         passcodeView = new PasscodeView(this);
         drawerLayoutContainer.addView(passcodeView);
@@ -448,7 +448,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                 }
                                 break;
                             case "wallpapers": {
-                                WallpapersActivity settings = new WallpapersActivity();
+                                FenegramWallpaperActivity settings = new FenegramWallpaperActivity();
                                 actionBarLayout.addFragmentToStack(settings);
                                 settings.restoreSelfArgs(savedInstanceState);
                                 break;
@@ -1710,7 +1710,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 } else if (lastFragment instanceof GroupCreateFinalActivity && args != null) {
                     outState.putBundle("args", args);
                     outState.putString("fragment", "group");
-                } else if (lastFragment instanceof WallpapersActivity) {
+                } else if (lastFragment instanceof FenegramWallpaperActivity) {
                     outState.putString("fragment", "wallpapers");
                 } else if (lastFragment instanceof ProfileActivity && ((ProfileActivity) lastFragment).isChat() && args != null) {
                     outState.putBundle("args", args);
