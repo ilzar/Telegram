@@ -24,7 +24,9 @@ import org.telegram.ui.ActionBar.BaseFragment;
 
 public class FenegramWallpaperActivity extends BaseFragment {
 
-    public static int[] resources = new int[]{R.drawable.red, R.drawable.blue};
+    public static int[] resources = new int[]{R.drawable.bag0, R.drawable.bag1,R.drawable.bag2, R.drawable.bag3,
+                                              R.drawable.bag4, R.drawable.bag5,R.drawable.bag6, R.drawable.bag7,
+                                              R.drawable.bag8};
     private int selectedResource;
 
     @Override
