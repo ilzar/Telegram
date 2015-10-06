@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
@@ -31,9 +32,9 @@ public class WebViewIntroActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.webview_intro_layout);
-
-        WebView webview = (WebView) findViewById(R.id.webview_intro);
-        WebSettings webSettings = webview.getSettings();
+        final View root = findViewById(R.id.root);
+        final WebView webview = (WebView) findViewById(R.id.webview_intro);
+        final WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webview.setWebViewClient(new WebViewClient() {
             public void onProgressChanged(WebView view, int progress) {
@@ -44,7 +45,9 @@ public class WebViewIntroActivity extends Activity {
         });
         webview.setWebViewClient(new WebViewClient() {
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(WebViewIntroActivity.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
+                ApplicationLoader.loadFenegramWallpaper();
+                root.setBackgroundDrawable(ApplicationLoader.getCachedWallpaper());
+                webview.setVisibility(View.GONE);
             }
         });
         webview.loadUrl(getString(R.string.FenegramLandingUrl));

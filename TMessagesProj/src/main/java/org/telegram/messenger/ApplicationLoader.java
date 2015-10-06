@@ -79,6 +79,9 @@ public class ApplicationLoader extends Application {
     }
 
     public static void loadFenegramWallpaper() {
+        if (cachedWallpaper != null) {
+            return;
+        }
         final int resPos =
             applicationContext.getSharedPreferences("YandexPreferences", MODE_PRIVATE)
                               .getInt("wallpaper", 0);
