@@ -44,12 +44,17 @@ public class WebViewIntroActivity extends Activity {
             }
         });
         webview.setWebViewClient(new WebViewClient() {
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+            public void onReceivedError(WebView view,
+                                        int errorCode,
+                                        String description,
+                                        String failingUrl) {
                 ApplicationLoader.loadFenegramWallpaper();
                 root.setBackgroundDrawable(ApplicationLoader.getCachedWallpaper());
                 webview.setVisibility(View.GONE);
             }
         });
+        webview.getSettings().setLoadWithOverviewMode(true);
+        webview.getSettings().setUseWideViewPort(true);
         webview.loadUrl(getString(R.string.FenegramLandingUrl));
 
         Button startMessaging = (Button) findViewById(R.id.start_messaging);

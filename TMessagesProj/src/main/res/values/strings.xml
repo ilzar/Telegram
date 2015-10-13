@@ -414,7 +414,7 @@
     <string name="ShowCard">Show Card</string>
     <string name="NoBots">No Bots Found</string>
     <string name="TelegramFaqUrl">https://telegram.org/faq</string>
-    <string name="FenegramLandingUrl">http://fenegram.com</string>
+    <string name="FenegramLandingUrl">http://fenegram.com/boarding/</string>
     <string name="DeleteLocalization">Delete localization?</string>
     <string name="IncorrectLocalization">Incorrect localization file</string>
     <string name="Enabled">Enabled</string>
