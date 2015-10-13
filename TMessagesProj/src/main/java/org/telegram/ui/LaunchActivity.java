@@ -44,6 +44,7 @@ import android.widget.Toast;
 
 import com.yandex.metrica.YandexMetrica;
 
+import org.telegram.Ytils.StickersManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.ChatObject;
@@ -477,26 +478,15 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
             ViewServer.get(this).addWindow(this);
         }*/
         if (!mainFragmentsStack.isEmpty()) {
-            TLRPC.TL_inputStickerSetShortName stickerset = new TLRPC.TL_inputStickerSetShortName();
-//            stickerset.short_name = "footbalistafa1";
-            stickerset.short_name = "fngr_1";
-            TLRPC.TL_messages_installStickerSet req = new TLRPC.TL_messages_installStickerSet();
-            req.stickerset = stickerset;
-            ConnectionsManager.getInstance().sendRequest(req, new RequestDelegate() {
-                @Override
-                public void run(TLObject response, final TLRPC.TL_error error) {
-                    AndroidUtilities.runOnUIThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            StickersQuery.loadStickers(false, true);
-                        }
-                    });
-                }
-            });
+            StickersManager.INSTANCE.installStickers(ApplicationLoader.applicationContext);
         }
 
         handleIntent(getIntent(), false, savedInstanceState != null, false);
         needLayout();
+    }
+
+    private void installStickerSet() {
+
     }
 
     private void showPasscodeActivity() {

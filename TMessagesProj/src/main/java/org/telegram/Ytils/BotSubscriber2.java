@@ -29,8 +29,7 @@ public class BotSubscriber2 {
         botNames.add("tahminetbot");
         botNames.add("fenerbahce_bot");
         botNames.add("fenerbahce_vote_bot");
-        botNames.add("fenetestbot");
-        botNames.add("fenerbahcebetsbot");
+        botNames.add("LookALikeBot");
     }
 
     public void init() {
